@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvnn3yuwe8epe"]
+
+[ext_resource type="Texture2D" uid="uid://c0e5oaq5fj3iw" path="res://Art/1x1/1x1-base.png" id="1_01b0a"]
+[ext_resource type="Texture2D" uid="uid://bho7orm5r662i" path="res://Art/1x1/1x1-building1.png" id="2_g8e4x"]
+[ext_resource type="Texture2D" uid="uid://d05um4rfvoowq" path="res://Art/1x1/1x1-buildings.png" id="2_yqxob"]
+[ext_resource type="Texture2D" uid="uid://dli4v6iljqeqi" path="res://Art/1x1/1x1-building2.png" id="3_r85nm"]
+[ext_resource type="Texture2D" uid="uid://4su0ykue7kck" path="res://Art/1x1/1x1-building3.png" id="4_agdiq"]
+[ext_resource type="Texture2D" uid="uid://bqeq5u7c0seq2" path="res://Art/1x1/1x1-building4.png" id="5_yrgw8"]
+[ext_resource type="Texture2D" uid="uid://bk60h0elvhmr7" path="res://Art/1x1/1x1-tram.png" id="6_pg0ow"]
+
+[node name="Tile" type="Node2D"]
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Base" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_01b0a")
+
+[node name="Blank Buildings" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_yqxob")
+
+[node name="Purple" type="Sprite2D" parent="Sprites"]
+visible = false
+modulate = Color(1, 0.443137, 1, 1)
+texture = ExtResource("2_g8e4x")
+
+[node name="Red" type="Sprite2D" parent="Sprites"]
+visible = false
+modulate = Color(0.858824, 0.25098, 0.313726, 1)
+texture = ExtResource("3_r85nm")
+
+[node name="Yellow" type="Sprite2D" parent="Sprites"]
+visible = false
+modulate = Color(1, 0.933333, 0.184314, 1)
+texture = ExtResource("4_agdiq")
+
+[node name="Tram Station" type="Sprite2D" parent="Sprites"]
+visible = false
+modulate = Color(0.43, 0.9525, 1, 1)
+texture = ExtResource("5_yrgw8")
+
+[node name="Tram Line" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("6_pg0ow")
