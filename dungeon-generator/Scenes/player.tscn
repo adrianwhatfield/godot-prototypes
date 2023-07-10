@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_rw0sn"]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_sf12s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
