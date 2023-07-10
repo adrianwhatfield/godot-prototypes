@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch1lya5ewrk5t"]
+
+[ext_resource type="Texture2D" uid="uid://cww5o3a3tbe5h" path="res://Assets/eye_of_devastation.png" id="1_oakhk"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_sf12s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rw0sn"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_sf12s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_oakhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rw0sn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
