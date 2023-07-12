@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgxjx8pcf4flw"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_s2q80"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_s2q80")
+
+[node name="Zooms" type="HBoxContainer" parent="."]
+offset_left = 30.0
+offset_top = 27.0
+offset_right = 92.0
+offset_bottom = 67.0
+
+[node name="one" type="Button" parent="Zooms"]
+layout_mode = 2
+text = "1"
+
+[node name="two" type="Button" parent="Zooms"]
+layout_mode = 2
+text = "2"
+
+[node name="three" type="Button" parent="Zooms"]
+layout_mode = 2
+text = "3"
+
+[connection signal="pressed" from="Zooms/one" to="." method="_on_one_pressed"]
+[connection signal="pressed" from="Zooms/two" to="." method="_on_two_pressed"]
+[connection signal="pressed" from="Zooms/three" to="." method="_on_three_pressed"]

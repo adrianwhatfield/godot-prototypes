@@ -17,3 +17,11 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = false
 	
 	move_and_slide()
+
+func _process(delta):
+	if Manager.camera_zoom == 1:
+		$Camera2D.zoom = Vector2(1, 1)
+	if Manager.camera_zoom == 2:
+		$Camera2D.zoom = Vector2(2, 2)
+	if Manager.camera_zoom == 3:
+		$Camera2D.zoom = Vector2(3, 3)
