@@ -15,6 +15,7 @@ var previous_room = Vector2(0, 0)
 func _ready():
 	randomize()
 	generate_dungeon()
+	remove_duplicates()
 	
 	add_room(0, 0)
 	add_room(0, 1)
@@ -48,8 +49,20 @@ func generate_dungeon():
 		var current_room = generate_room(previous_room)
 		rooms.append(current_room)
 		previous_room = current_room
-		print(rooms)
+	print(rooms)
 
+# Removes duplicates rooms in the rooms array
+func remove_duplicates():
+	var new_rooms = []
+	for room in rooms:
+		if room in new_rooms:
+			continue
+		else:
+			new_rooms.append(room)
+	print(new_rooms)
+	return new_rooms
+
+# Resets the dungeon to the start without having to reload main.tscn
 func reset_dungeon():
 	rooms = [Vector2(0, 0)]
 	previous_room = Vector2(0, 0)
