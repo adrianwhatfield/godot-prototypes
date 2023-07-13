@@ -19,11 +19,13 @@ func _ready():
 	add_room(0, 0)
 	add_room(0, 1)
 	add_room(0, 2)
+	
+	reset_dungeon()
 
 # Adds a room to the scene
 func add_room(x, y):
 	var room_instance = room_scene.instantiate()
-	add_child(room_instance)
+	$Dungeon.add_child(room_instance)
 	room_instance.position = Vector2(x * tile_size * x_size, y * tile_size * y_size)
 
 # Generates the next room position
@@ -47,3 +49,9 @@ func generate_dungeon():
 		rooms.append(current_room)
 		previous_room = current_room
 		print(rooms)
+
+func reset_dungeon():
+	rooms = [Vector2(0, 0)]
+	previous_room = Vector2(0, 0)
+	for child in $Dungeon.get_children():
+		child.queue_free()
