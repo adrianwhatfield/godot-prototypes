@@ -70,3 +70,8 @@ func make_dungeon():
 	generate_dungeon()
 	remove_duplicates()
 	add_dungeon()
+
+# Allows the player to regenerate and reset the dungeon in-game
+func _on_ui_reset_dungeon():
+	reset_dungeon()
+	make_dungeon()

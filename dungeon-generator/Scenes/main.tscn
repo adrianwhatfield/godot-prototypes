@@ -13,3 +13,5 @@ script = ExtResource("1_q1vux")
 position = Vector2(567, 324)
 
 [node name="Dungeon" type="Node2D" parent="."]
+
+[connection signal="reset_dungeon" from="UI" to="." method="_on_ui_reset_dungeon"]
