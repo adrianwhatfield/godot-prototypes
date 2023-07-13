@@ -16,12 +16,7 @@ func _ready():
 	randomize()
 	generate_dungeon()
 	remove_duplicates()
-	
-	add_room(0, 0)
-	add_room(0, 1)
-	add_room(0, 2)
-	
-	reset_dungeon()
+	add_dungeon()
 
 # Adds a room to the scene
 func add_room(x, y):
@@ -68,3 +63,8 @@ func reset_dungeon():
 	previous_room = Vector2(0, 0)
 	for child in $Dungeon.get_children():
 		child.queue_free()
+
+# Add the whole rooms array to the scene
+func add_dungeon():
+	for room in rooms:
+		add_room(room.x, room.y)
