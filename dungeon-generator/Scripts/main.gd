@@ -44,7 +44,6 @@ func generate_dungeon():
 		var current_room = generate_room(previous_room)
 		rooms.append(current_room)
 		previous_room = current_room
-	print(rooms)
 
 # Removes duplicates rooms in the rooms array
 func remove_duplicates():
@@ -54,7 +53,6 @@ func remove_duplicates():
 			continue
 		else:
 			new_rooms.append(room)
-	print(new_rooms)
 	return new_rooms
 
 # Resets the dungeon to the start without having to reload main.tscn
