@@ -14,9 +14,7 @@ var previous_room = Vector2(0, 0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	generate_dungeon()
-	remove_duplicates()
-	add_dungeon()
+	make_dungeon()
 
 # Adds a room to the scene
 func add_room(x, y):
@@ -66,3 +64,9 @@ func reset_dungeon():
 func add_dungeon():
 	for room in rooms:
 		add_room(room.x, room.y)
+
+# Makes the whole dungeon
+func make_dungeon():
+	generate_dungeon()
+	remove_duplicates()
+	add_dungeon()
