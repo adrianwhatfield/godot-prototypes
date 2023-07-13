@@ -28,9 +28,6 @@ func add_room(x, y):
 
 # Generates the next room position
 func generate_room(room):
-	var x_previous = room.x
-	var y_previous = room.y
-	
 	var next_room_direction = randi() % 4
 	
 	match next_room_direction:
@@ -49,3 +46,4 @@ func generate_dungeon():
 		var current_room = generate_room(previous_room)
 		rooms.append(current_room)
 		previous_room = current_room
+		print(rooms)
