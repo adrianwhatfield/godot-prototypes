@@ -57,6 +57,7 @@ func remove_duplicates():
 func reset_dungeon():
 	rooms = [Vector2(0, 0)]
 	previous_room = Vector2(0, 0)
+	$Player.position = Vector2(550, 300)
 	for child in $Dungeon.get_children():
 		child.queue_free()
 
