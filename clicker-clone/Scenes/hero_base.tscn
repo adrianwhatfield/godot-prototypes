@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk01n67xcdpcj"]
+
+[ext_resource type="Texture2D" uid="uid://b7pako6hauh87" path="res://Assets/upgrade.png" id="1_2x253"]
+[ext_resource type="Texture2D" uid="uid://dehnghmo28g62" path="res://icon.svg" id="2_fe87v"]
+
+[node name="HeroBase" type="Control"]
+custom_minimum_size = Vector2(415, 145)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 415.0
+offset_bottom = 145.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.615686, 0.560784, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LevelUpContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LvlUpButton" type="Button" parent="HBoxContainer/LevelUpContainer"]
+layout_mode = 2
+text = "Level Up"
+
+[node name="CostLabel" type="Label" parent="HBoxContainer/LevelUpContainer"]
+layout_mode = 2
+text = "XX COINS"
+
+[node name="InfoContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/InfoContainer"]
+layout_mode = 2
+text = "HERO NAME"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DPSLevelContainer" type="HBoxContainer" parent="HBoxContainer/InfoContainer"]
+layout_mode = 2
+
+[node name="DPSLabel" type="Label" parent="HBoxContainer/InfoContainer/DPSLevelContainer"]
+layout_mode = 2
+text = "XX DPS"
+
+[node name="LvlLabel" type="Label" parent="HBoxContainer/InfoContainer/DPSLevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "LVL XX"
+
+[node name="UpgradesContainer" type="HBoxContainer" parent="HBoxContainer/InfoContainer"]
+layout_mode = 2
+
+[node name="Upgrade" type="Button" parent="HBoxContainer/InfoContainer/UpgradesContainer"]
+layout_mode = 2
+icon = ExtResource("1_2x253")
+
+[node name="Upgrade1" type="Button" parent="HBoxContainer/InfoContainer/UpgradesContainer"]
+layout_mode = 2
+icon = ExtResource("1_2x253")
+
+[node name="Upgrade2" type="Button" parent="HBoxContainer/InfoContainer/UpgradesContainer"]
+layout_mode = 2
+icon = ExtResource("1_2x253")
+
+[node name="HeroIcon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_fe87v")
+stretch_mode = 2

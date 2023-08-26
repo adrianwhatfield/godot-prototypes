@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkm686bj6bco"]
+
+[ext_resource type="PackedScene" uid="uid://dk01n67xcdpcj" path="res://Scenes/hero_base.tscn" id="1_6dtu4"]
+[ext_resource type="Texture2D" uid="uid://dehnghmo28g62" path="res://icon.svg" id="1_gxp83"]
+[ext_resource type="Script" path="res://Scripts/MainMargin.gd" id="1_oqjsh"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.27451, 0.32549, 1)
+
+[node name="MainMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oqjsh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin"]
+layout_mode = 2
+alignment = 1
+
+[node name="StatsContainer" type="HBoxContainer" parent="MainMargin/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CoinsLabel" type="Label" parent="MainMargin/VBoxContainer/StatsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "XX Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage" type="VBoxContainer" parent="MainMargin/VBoxContainer/StatsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Info" type="Label" parent="MainMargin/VBoxContainer/StatsContainer/Stage"]
+layout_mode = 2
+text = "STAGE X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressToNext" type="ProgressBar" parent="MainMargin/VBoxContainer/StatsContainer/Stage"]
+layout_mode = 2
+
+[node name="ClickablesContainer" type="HBoxContainer" parent="MainMargin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainMargin/VBoxContainer/ClickablesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+follow_focus = true
+
+[node name="Upgrades" type="VBoxContainer" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="StatsLabel" type="Label" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades"]
+layout_mode = 2
+text = "Click DMG XX
+XX DPS"
+
+[node name="ClickHero" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades" instance=ExtResource("1_6dtu4")]
+layout_mode = 2
+
+[node name="FirstHero" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades" instance=ExtResource("1_6dtu4")]
+layout_mode = 2
+
+[node name="SecondHero" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades" instance=ExtResource("1_6dtu4")]
+layout_mode = 2
+
+[node name="ThirdHero" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades" instance=ExtResource("1_6dtu4")]
+layout_mode = 2
+
+[node name="Enemy" type="VBoxContainer" parent="MainMargin/VBoxContainer/ClickablesContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMargin/VBoxContainer/ClickablesContainer/Enemy"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_gxp83")
+stretch_mode = 2
+
+[node name="EnemyAttackButton" type="Button" parent="MainMargin/VBoxContainer/ClickablesContainer/Enemy"]
+layout_mode = 2
+text = "Click to attack"
+
+[node name="HealthBar" type="ProgressBar" parent="MainMargin/VBoxContainer/ClickablesContainer/Enemy"]
+layout_mode = 2
