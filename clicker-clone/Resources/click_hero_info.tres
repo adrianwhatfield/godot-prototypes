@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Hero" load_steps=3 format=3 uid="uid://w32vjnhv3x1q"]
+
+[ext_resource type="Script" path="res://Scripts/hero_resource.gd" id="1_3hnl5"]
+[ext_resource type="Texture2D" uid="uid://dehnghmo28g62" path="res://icon.svg" id="1_jcwyd"]
+
+[resource]
+script = ExtResource("1_3hnl5")
+hero_name = "Click Hero"
+base_damage = 5
+icon = ExtResource("1_jcwyd")
+base_cost = 10

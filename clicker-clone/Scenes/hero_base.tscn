@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk01n67xcdpcj"]
+[gd_scene load_steps=4 format=3 uid="uid://dk01n67xcdpcj"]
 
 [ext_resource type="Texture2D" uid="uid://b7pako6hauh87" path="res://Assets/upgrade.png" id="1_2x253"]
+[ext_resource type="Script" path="res://Scripts/hero_base.gd" id="1_eilgl"]
 [ext_resource type="Texture2D" uid="uid://dehnghmo28g62" path="res://icon.svg" id="2_fe87v"]
 
 [node name="HeroBase" type="Control"]
@@ -9,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 415.0
 offset_bottom = 145.0
+script = ExtResource("1_eilgl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,12 +46,6 @@ text = "XX COINS"
 layout_mode = 2
 alignment = 1
 
-[node name="NameLabel" type="Label" parent="HBoxContainer/InfoContainer"]
-layout_mode = 2
-text = "HERO NAME"
-horizontal_alignment = 2
-vertical_alignment = 1
-
 [node name="DPSLevelContainer" type="HBoxContainer" parent="HBoxContainer/InfoContainer"]
 layout_mode = 2
 
@@ -77,8 +73,16 @@ icon = ExtResource("1_2x253")
 layout_mode = 2
 icon = ExtResource("1_2x253")
 
+[node name="NameLabel" type="Label" parent="HBoxContainer/InfoContainer"]
+layout_mode = 2
+text = "HERO NAME"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="HeroIcon" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("2_fe87v")
 stretch_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/LevelUpContainer/LvlUpButton" to="." method="_on_lvl_up_button_pressed"]
