@@ -7,6 +7,7 @@ class_name HeroBase
 @onready var hero_icon = $HBoxContainer/HeroIcon
 @onready var dps_label = $HBoxContainer/InfoContainer/DPSLevelContainer/DPSLabel
 @onready var lvl_label = $HBoxContainer/InfoContainer/DPSLevelContainer/LvlLabel
+@onready var lvl_up_button = $HBoxContainer/LevelUpContainer/LvlUpButton
 
 # Info
 var hero_info: Hero
@@ -24,6 +25,12 @@ var current_damage: int
 # Multiplers
 var cost_multipler: float = 1.25
 var damage_multipler: float = 1.125
+
+func check_cost():
+	if current_cost > PlayerStats.coins:
+		lvl_up_button.disabled = true
+	else:
+		lvl_up_button.disabled = false
 
 func activate() -> void:
 	level = 1
@@ -58,6 +65,7 @@ func _on_lvl_up_button_pressed():
 				PlayerStats.dps += current_damage
 				level += 1
 		hero_state.INACTIVE:
-			activate()
-			PlayerStats.coins -= hero_info.base_cost
-			PlayerStats.dps += hero_info.base_damage
+			if PlayerStats.coins >= current_cost:
+				activate()
+				PlayerStats.coins -= hero_info.base_cost
+				PlayerStats.dps += hero_info.base_damage

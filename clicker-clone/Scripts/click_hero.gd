@@ -7,6 +7,8 @@ func _ready():
 		activate()
 
 func _process(delta):
+	check_cost()
+	
 	if state == hero_state.ACTIVE:
 		update_vars()
 		get_cost()

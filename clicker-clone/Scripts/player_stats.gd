@@ -1,6 +1,6 @@
 extends Node
 
-var coins := 1000
+var coins := 0
 var dps := 0
 var stage := 1
 var enemies_this_stage := 0
