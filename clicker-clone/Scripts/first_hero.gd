@@ -1,4 +1,4 @@
-extends "res://Scripts/hero_base.gd"
+extends HeroBase
 
 func _ready():
 	hero_info = preload("res://Resources/first_hero_info.tres")

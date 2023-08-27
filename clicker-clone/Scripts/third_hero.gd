@@ -1,7 +1,7 @@
 extends HeroBase
 
 func _ready():
-	hero_info = preload("res://Resources/click_hero_info.tres")
+	hero_info = preload("res://Resources/third_hero_info.tres")
 	current_cost = hero_info.base_cost
 	if state == hero_state.ACTIVE:
 		activate()
@@ -15,3 +15,5 @@ func _process(delta):
 	
 	if state == hero_state.INACTIVE:
 		update_ui()
+
+

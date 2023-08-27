@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Hero" load_steps=3 format=3 uid="uid://b6n324gewc8ap"]
+
+[ext_resource type="Script" path="res://Scripts/hero_resource.gd" id="1_fwwie"]
+[ext_resource type="Texture2D" uid="uid://dehnghmo28g62" path="res://icon.svg" id="1_wnqri"]
+
+[resource]
+script = ExtResource("1_fwwie")
+hero_name = "Second Hero"
+base_damage = 50
+icon = ExtResource("1_wnqri")
+base_cost = 500

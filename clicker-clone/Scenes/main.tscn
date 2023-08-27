@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjkm686bj6bco"]
+[gd_scene load_steps=9 format=3 uid="uid://bjkm686bj6bco"]
 
 [ext_resource type="PackedScene" uid="uid://dk01n67xcdpcj" path="res://Scenes/hero_base.tscn" id="1_6dtu4"]
 [ext_resource type="Texture2D" uid="uid://dehnghmo28g62" path="res://icon.svg" id="1_gxp83"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/MainMargin.gd" id="1_oqjsh"]
 [ext_resource type="Script" path="res://Scripts/click_hero.gd" id="3_2nyc2"]
 [ext_resource type="Script" path="res://Scripts/first_hero.gd" id="4_weqc8"]
+[ext_resource type="Script" path="res://Scripts/second_hero.gd" id="6_1pewj"]
+[ext_resource type="Script" path="res://Scripts/third_hero.gd" id="7_8h3v4"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -98,9 +100,11 @@ script = ExtResource("4_weqc8")
 
 [node name="SecondHero" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades" instance=ExtResource("1_6dtu4")]
 layout_mode = 2
+script = ExtResource("6_1pewj")
 
 [node name="ThirdHero" parent="MainMargin/VBoxContainer/ClickablesContainer/ScrollContainer/Upgrades" instance=ExtResource("1_6dtu4")]
 layout_mode = 2
+script = ExtResource("7_8h3v4")
 
 [node name="Enemy" type="VBoxContainer" parent="MainMargin/VBoxContainer/ClickablesContainer"]
 layout_mode = 2

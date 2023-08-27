@@ -1,4 +1,5 @@
 extends Control
+class_name HeroBase
 
 # Nodes
 @onready var cost_label = $HBoxContainer/LevelUpContainer/CostLabel
