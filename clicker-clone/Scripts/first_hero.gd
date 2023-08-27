@@ -2,20 +2,16 @@ extends "res://Scripts/hero_base.gd"
 
 func _ready():
 	hero_info = preload("res://Resources/first_hero_info.tres")
-	if is_active == true:
-		level = 1
+	current_cost = hero_info.base_cost
+	if state == hero_state.ACTIVE:
 		activate()
-	elif is_active == false:
-		level = 0
 
 func _process(delta):
-	if is_active == true:
+	if state == hero_state.ACTIVE:
 		get_cost()
 		get_damage()
 		update_vars()
-		
 		update_ui()
-	elif is_active == false:
-		current_damage = 0
-		
+	
+	if state == hero_state.INACTIVE:
 		update_ui()

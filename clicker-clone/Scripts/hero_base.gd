@@ -9,7 +9,8 @@ extends Control
 
 # Info
 var hero_info: Hero
-@export var is_active: bool = false
+enum hero_state {ACTIVE, INACTIVE}
+var state: hero_state = hero_state.INACTIVE
 
 # Stats: lvl, cost, dmg
 var level: int = 0
@@ -25,7 +26,7 @@ var damage_multipler: float = 1.125
 
 func activate() -> void:
 	level = 1
-	get_cost()
+	state = hero_state.ACTIVE
 
 func get_cost() -> void:
 	var float_cost: float = float(base_cost)
@@ -48,6 +49,14 @@ func update_ui() -> void:
 	dps_label.text = str(current_damage) + " DPS"
 	hero_icon.texture = hero_info.icon
 
-
 func _on_lvl_up_button_pressed():
-	level += 1
+	match state:
+		hero_state.ACTIVE:
+			if PlayerStats.coins >= current_cost:
+				PlayerStats.coins -= current_cost
+				PlayerStats.dps += current_damage
+				level += 1
+		hero_state.INACTIVE:
+			activate()
+			PlayerStats.coins -= hero_info.base_cost
+			PlayerStats.dps += hero_info.base_damage
