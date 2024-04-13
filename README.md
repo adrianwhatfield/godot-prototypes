@@ -3,6 +3,6 @@ A repo of my small Godot projects
 
 ## Progress
 
-- [ ] Character Creator
+- [x] Character Creator
 - [x] Dungeon Generator
 - [ ] Tile Cities Clone
