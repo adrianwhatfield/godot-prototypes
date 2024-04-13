@@ -1,0 +1,198 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1swror336xnr"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_6gkmv"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6gkmv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="LineEdit" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Name"
+expand_to_text_length = true
+
+[node name="Age" type="LineEdit" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Age"
+expand_to_text_length = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Control2" type="Control" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Backstory" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ChildBackstoryButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Backstory"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Academy Student"
+popup/item_0/id = 0
+popup/item_1/text = "Urchin"
+popup/item_1/id = 1
+popup/item_2/text = "Noble"
+popup/item_2/id = 2
+
+[node name="ChildBackstoryInfo" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Backstory"]
+visible = false
+custom_minimum_size = Vector2(287, 23)
+layout_mode = 2
+text = "This is a description of the backstory."
+autowrap_mode = 2
+
+[node name="AdultBackstoryButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Backstory"]
+auto_translate_mode = 1
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Herbalist"
+popup/item_0/id = 0
+popup/item_1/text = "Bandit"
+popup/item_1/id = 1
+popup/item_2/text = "Professor"
+popup/item_2/id = 2
+
+[node name="AdultBackstoryInfo" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Backstory"]
+auto_translate_mode = 1
+visible = false
+custom_minimum_size = Vector2(287, 23)
+layout_mode = 2
+text = "This is a description of the backstory."
+autowrap_mode = 2
+
+[node name="Species" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SpeciesButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Species"]
+layout_mode = 2
+size_flags_vertical = 4
+item_count = 4
+popup/item_0/text = "Human"
+popup/item_0/id = 0
+popup/item_1/text = "Elf"
+popup/item_1/id = 1
+popup/item_2/text = "Dwarf"
+popup/item_2/id = 2
+popup/item_3/text = "Orc"
+popup/item_3/id = 3
+
+[node name="SpeciesInfo" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Species"]
+visible = false
+custom_minimum_size = Vector2(287, 23)
+layout_mode = 2
+text = "This is a description of the species."
+autowrap_mode = 2
+
+[node name="Class" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ClassButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Class"]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "Fighter"
+popup/item_0/id = 0
+popup/item_1/text = "Ranger"
+popup/item_1/id = 1
+popup/item_2/text = "Mage"
+popup/item_2/id = 2
+popup/item_3/text = "Rogue"
+popup/item_3/id = 3
+popup/item_4/text = "Cleric"
+popup/item_4/id = 4
+
+[node name="ClassInfo" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Class"]
+visible = false
+custom_minimum_size = Vector2(287, 23)
+layout_mode = 2
+text = "This is a description of the class."
+autowrap_mode = 2
+
+[node name="Stats" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RerollButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+layout_mode = 2
+text = "Reroll"
+
+[node name="Strength" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+layout_mode = 2
+text = "STR: 6"
+
+[node name="Dexterity" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "DEX: 6"
+
+[node name="Constitution" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "CON: 6"
+
+[node name="Intelligence" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "STR: 6"
+
+[node name="Wisdom" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "WIS: 6"
+
+[node name="Charisma" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "CHA: 6"
+
+[node name="Luck" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "LUK: 6"
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Backstory/ChildBackstoryButton" to="." method="_on_child_backstory_button_item_selected"]
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Backstory/AdultBackstoryButton" to="." method="_on_adult_backstory_button_item_selected"]
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Species/SpeciesButton" to="." method="_on_species_button_item_selected"]
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Class/ClassButton" to="." method="_on_class_button_item_selected"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Stats/RerollButton" to="." method="_on_reroll_button_pressed"]

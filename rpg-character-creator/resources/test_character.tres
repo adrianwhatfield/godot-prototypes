@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://ba1mvwlixraa4"]
+
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_6mmy0"]
+
+[resource]
+script = ExtResource("1_6mmy0")
+character_name = "Test McTesting"
+age = 22
+species = 2
+strength = 5
+dexterity = 4
+constitution = 7
+intelligence = 5
+wisdom = 4
+charisma = 6
+luck = 4
+char_class = 3
+child_backstory = 2
+adult_backstory = 1
